@@ -51,5 +51,16 @@ public class CalculatorTest {
         assertEquals(100, result);
     }
 
+    @Test
+    public void should_return_score_1067_when_calculate_given_2350_sale() {
+        Goods ICEBOX = new Goods("ICEBOX", BigDecimal.valueOf(2350), GoodsType.OTHER);
+
+        List<Goods> goodsList = Arrays.asList(ICEBOX);
+        Calulator calulator = new Calulator();
+        BigDecimal price = calulator.calculatePrice(goodsList);
+        int result = calulator.calculateScore(price, goodsList);
+        assertEquals(1067, result);
+    }
+
 
 }
