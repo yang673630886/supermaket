@@ -73,5 +73,17 @@ public class CalculatorTest {
         assertEquals(3000, result);
     }
 
+    @Test
+    public void should_return_score_1890_when_calculate_given_800_sale_and_2000_notsale() {
+        Goods tv = new Goods("TV", BigDecimal.valueOf(800), GoodsType.TV);
+        Goods xiyiji = new Goods("XIYIJI", BigDecimal.valueOf(2000), GoodsType.OTHER);
+
+        List<Goods> goodsList = Arrays.asList(tv,xiyiji);
+        Calulator calulator = new Calulator();
+        BigDecimal price = calulator.calculatePrice(goodsList);
+        int result = calulator.calculateScore(price, goodsList);
+        assertEquals(1890, result);
+    }
+
 
 }
