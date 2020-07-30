@@ -13,28 +13,12 @@ public class Goods {
         this.goodsType = goodsType;
     }
 
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
     public BigDecimal getPrice() {
         return price;
     }
 
-    public void setPrice(BigDecimal price) {
-        this.price = price;
-    }
-
     public GoodsType getGoodsType() {
         return goodsType;
-    }
-
-    public void setGoodsType(GoodsType goodsType) {
-        this.goodsType = goodsType;
     }
 
     public boolean notSale(GoodsType goodsType){

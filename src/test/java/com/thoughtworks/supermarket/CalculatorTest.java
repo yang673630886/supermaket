@@ -7,9 +7,7 @@ import java.math.BigDecimal;
 import java.util.Arrays;
 import java.util.List;
 
-import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertThat;
 
 public class CalculatorTest {
     @Test
@@ -54,7 +52,6 @@ public class CalculatorTest {
     @Test
     public void should_return_score_1067_when_calculate_given_2350_sale() {
         Goods ICEBOX = new Goods("ICEBOX", BigDecimal.valueOf(2350), GoodsType.OTHER);
-
         List<Goods> goodsList = Arrays.asList(ICEBOX);
         Calulator calulator = new Calulator();
         BigDecimal price = calulator.calculatePrice(goodsList);
@@ -65,7 +62,6 @@ public class CalculatorTest {
     @Test
     public void should_return_score_3000_when_calculate_given_2000_sale() {
         Goods ICEBOX = new Goods("ICEBOX", BigDecimal.valueOf(2000), GoodsType.ICEBOX);
-
         List<Goods> goodsList = Arrays.asList(ICEBOX);
         Calulator calulator = new Calulator();
         BigDecimal price = calulator.calculatePrice(goodsList);
@@ -77,7 +73,6 @@ public class CalculatorTest {
     public void should_return_score_1890_when_calculate_given_800_sale_and_2000_notsale() {
         Goods tv = new Goods("TV", BigDecimal.valueOf(800), GoodsType.TV);
         Goods xiyiji = new Goods("XIYIJI", BigDecimal.valueOf(2000), GoodsType.OTHER);
-
         List<Goods> goodsList = Arrays.asList(tv,xiyiji);
         Calulator calulator = new Calulator();
         BigDecimal price = calulator.calculatePrice(goodsList);

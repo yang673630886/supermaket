@@ -31,7 +31,6 @@ public class Calulator {
             }
         }
         return notsaleprice;
-
     }
 
     int calculateScore(BigDecimal price, List<Goods> goodsList) {
