@@ -21,5 +21,23 @@ public class CalculatorTest {
         assertEquals(1, result);
     }
 
+    @Test
+    public void should_return_score_100_when_calculate_given_price_100() {
+        Goods goods = new Goods("pen", BigDecimal.valueOf(100), GoodsType.OTHER);
+        List<Goods> goodsList = Arrays.asList(goods);
+        Calulator calulator = new Calulator();
+        int result = calulator.calculatePrice(goodsList).intValue();
+        assertEquals(100, result);
+    }
+
+    @Test
+    public void should_return_score_110_when_calculate_given_price_110() {
+        Goods goods = new Goods("pen", BigDecimal.valueOf(110), GoodsType.OTHER);
+        List<Goods> goodsList = Arrays.asList(goods);
+        Calulator calulator = new Calulator();
+        int result = calulator.calculatePrice(goodsList).intValue();
+        assertEquals(110, result);
+    }
+
 
 }
